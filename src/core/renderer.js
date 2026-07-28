@@ -82,8 +82,4 @@ function render(tex, { em, ex, lineHeight, color }) {
     return art
 }
 
-function clearCache() {
-    cache.clear()
-}
-
-module.exports = { render, clearCache }
+module.exports = { render }

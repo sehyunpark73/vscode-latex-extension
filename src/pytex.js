@@ -1,6 +1,5 @@
 const vscode = require("vscode")
 const { readStyle, loadTheme } = require("./editor/style")
-const { clearCache } = require("./core/renderer")
 const Painter = require("./editor/painter")
 
 const LANGUAGE = "python"
@@ -61,7 +60,6 @@ class Pytex {
 
     async reload() {
         this.theme = await loadTheme()
-        clearCache()
         this.refresh()
     }
 

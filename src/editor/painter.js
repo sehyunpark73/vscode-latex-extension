@@ -61,7 +61,7 @@ class Painter {
         for (const span of findSpans(document.getText())) {
             const start = document.positionAt(span.start)
             const end = document.positionAt(span.end)
-            if (start.line !== end.line || revealed.has(start.line)) continue
+            if (start.line !== end.line) continue
 
             const color = theme[span.kind] || fallbackColor()
             const paint = render(span.tex, { ...style, color })
@@ -69,6 +69,8 @@ class Painter {
                 warnings.push(new vscode.Range(start, end))
                 continue
             }
+
+            if (revealed.has(start.line)) continue
 
             sources.push(new vscode.Range(start, end))
             images.push(imageAt(end, paint))
