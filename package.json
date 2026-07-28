@@ -1,0 +1,34 @@
+{
+  "name": "pytex",
+  "version": "1.0.0",
+  "publisher": "sehyun",
+  "license": "ISC",
+  "type": "commonjs",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onLanguage:python"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "pytex.reload",
+        "title": "pytex: Reload Theme Colors"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "node esbuild.js",
+    "package": "npm run build && vsce package --allow-missing-repository --skip-license"
+  },
+  "dependencies": {
+    "jsonc-parser": "^3.3.1",
+    "mathjax-full": "3.2.2"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^2.24.0",
+    "esbuild": "^0.20.0"
+  }
+}
