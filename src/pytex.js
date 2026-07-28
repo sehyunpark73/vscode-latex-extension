@@ -1,5 +1,6 @@
 const vscode = require("vscode")
-const { readStyle, loadTheme } = require("./editor/style")
+const { readStyle } = require("./editor/style")
+const { loadTheme } = require("./editor/theme")
 const Painter = require("./editor/painter")
 
 const LANGUAGE = "python"

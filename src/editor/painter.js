@@ -1,6 +1,6 @@
 const vscode = require("vscode")
-const { findSpans } = require("../core/lexer")
-const { render } = require("../core/renderer")
+const { findSpans } = require("../tex/lexer")
+const { render } = require("../tex/renderer")
 
 const DARK_FOREGROUND = "#d4d4d4"
 const LIGHT_FOREGROUND = "#1f1f1f"
